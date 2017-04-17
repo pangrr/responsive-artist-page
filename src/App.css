@@ -1,0 +1,44 @@
+.searchbar {
+  margin: 10px;
+  height: 50px;
+  background: gray;
+}
+
+.list {
+  width: calc(100% - 20px);
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  background-color: silver;
+}
+
+.item {
+	position: relative; /* show content inside */
+	display: inline-block;
+  background-color: gray;
+}
+
+.item-content {
+	position: absolute; /* show inside container */
+	background-color: orange;
+	top: 10px;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+}
+
+/* narrow screen */
+@media screen and (max-width: 768px) { 
+	.item {
+		width: 50%;
+		padding-top: 50%; /* 1:1 Aspect Ratio */
+	}
+}
+
+/* wide screen */
+@media screen and (min-width: 769px) { 
+	.item {
+		width: 33.3%;
+		padding-top: 33.3%; /* 1:1 Aspect Ratio */
+	}
+}
