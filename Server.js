@@ -10,8 +10,9 @@ const artistIdPlaceholder = 'ARTIST_ID';
 app.get('/api/artist', (req, res) => {
   const param = req.query.q;
 
-  // Do nothing with empty request parameter.
+  // Return empty array with empty request parameter.
   if (!param) {
+    res.json([]);
     return;
   }
 
@@ -19,8 +20,9 @@ app.get('/api/artist', (req, res) => {
     uri: endpointTemplate.replace(keywordsPlaceholder, param),
     json: true
   }, (error, response, body) => {
-    // Do nothing on error.
+    // Handle error.
     if (error) {
+      res.end(500);
       return;
     }
 
