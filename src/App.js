@@ -67,6 +67,7 @@ class App extends Component {
  	render() {
 		return (
     	<div className='app'>
+    		<div className='top-placeholder'></div>
      		<form className='searchbar'>
 	    		<input type='text' placeholder='Find an artist' className='search-input' value={this.state.search} onChange={this.handleSearchInputChange}/>
 	    		<button type='submit' className='search-submit' onClick={this.handleSearchInputSubmit}>
