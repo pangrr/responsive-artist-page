@@ -1,67 +1,89 @@
+body {
+	background-color: #efefef;
+}
+
+.app {
+	margin: auto;
+}
+
 .searchbar {
-  margin: 10px;
-  height: 50px;
-  background: gray;
+	margin: 3px;
+  display: flex;
+  height: 40px;
 }
 
-.list {
-  margin-left: 10px;
-  margin-right: 10px;
+.search-input {
+	flex-grow: 1;
+	outline: none;
+	font-size: 18px;
+	text-indent: 10px;
+	min-width: 0px;
+}
+
+.search-submit {
+	width: 50px;
+	padding: 8px;
+	border: none;
+	outline: none;
+	background-color: #dedede;
+}
+
+.artists {
   margin-top: 10px;
-  background-color: silver;
+  width: 100%;
 }
 
-.item {
+.artist {
 	position: relative; /* show content inside */
 	display: inline-block;
-  background-color: gray;
 }
 
-.item-content {
+.artist-info {
 	position: absolute; /* show inside container */
-	background-color: orange;
-	top: 10px;
-	bottom: 10px;
-	left: 10px;
-	right: 10px;
+	top: 3px;
+	bottom: 3px;
+	left: 3px;
+	right: 3px;
 	text-align: center;
 }
 
-.image {
+.artist-image {
 	width: 100%;
-	height: 100%;
+	height: calc(100% - 100px);
 	max-width: 250px;
 	max-height: 250px;
 }
 
+.artist-name {
+	font-size: 14px;
+}
+
+.artist-station-description {
+	font-size: 11px;
+	color: gray;
+}
+
 /* narrow screen 2 x 3 */
 @media screen and (max-width: 768px) {
-	.searchbar {
+	.app {
+		width: 100%;
 		max-width: 500px;
 	}
 
-	.list {
-		max-width: 500px;
-	}
-
-	.item {
+	.artist {
 		width: 50%;
-		padding-top: 50%;
+		padding-top: calc(50% + 100px);
 	}
 }
 
 /* wide screen 3 x 2 */
 @media screen and (min-width: 769px) {
-	.searchbar {
-		width: 750px;
+	.app {
+		width: 769px;
 	}
 
-	.list {
-		width: 750px;
-	}
-
-	.item {
+	.artist {
 		width: 33.3%;
-		padding-top: 250px;
+		padding-top: 350px;
 	}
 }
